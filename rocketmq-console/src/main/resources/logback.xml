@@ -1,3 +1,9 @@
+<!-- 
+  @Author: chenzhiyuan
+  @Date:   2019-12-06 21:31:50
+  @Last Modified by:   chenzhiyuan
+  @Last Modified time: 2019-12-06 21:31:55
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -8,10 +14,10 @@
 
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${user.home}/logs/consolelogs/rocketmq-console.log</file>
+		<file>../logs/consolelogs/rocketmq-console.log</file>
 		<append>true</append>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${user.home}/logs/consolelogs/rocketmq-console-%d{yyyy-MM-dd}.%i.log
+			<fileNamePattern>../logs/consolelogs/rocketmq-console-%d{yyyy-MM-dd}.%i.log
 			</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy
 				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -25,7 +31,7 @@
 		</encoder>
 	</appender>
 
-	<root level="INFO">
+	<root level="${log.root.level}">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
 	</root>
